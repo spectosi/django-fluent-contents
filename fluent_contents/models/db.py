@@ -160,9 +160,9 @@ class ContentItemMetaClass(PolymorphicModelBase):
         app_label = new_class._meta.app_label
 
         if name != 'ContentItem':
-            if db_table.startswith(app_label + '_'):
-                model_name = db_table[len(app_label)+1:]
-                new_class._meta.db_table = "contentitem_%s_%s" % (app_label, model_name)
+            #if db_table.startswith(app_label + '_'):
+            #    model_name = db_table[len(app_label)+1:]
+            #    new_class._meta.db_table = "contentitem_%s_%s" % (app_label, model_name)
 
             # Enforce good manners. The name is often not visible, except for the delete page.
             if not hasattr(new_class, '__str__') or new_class.__str__ == ContentItem.__str__:
